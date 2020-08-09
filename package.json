@@ -127,5 +127,7 @@
     "webpack-dev-middleware": "^3.5.0",
     "webpack-hot-middleware": "^2.24.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "cookie-parser": "^1.4.5"
+  }
 }
