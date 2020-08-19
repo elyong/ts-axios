@@ -1,7 +1,7 @@
 const toString = Object.prototype.toString
 
 export function isDate(val: any): val is Date {
-  return toString.call(val) === '[Object Date]'
+  return toString.call(val) === '[object Date]'
 }
 
 export function isObject(val: any): val is Object {
@@ -34,7 +34,7 @@ export function deepMerge(...objs: any[]): any {
     if (obj) {
       Object.keys(obj).forEach(key => {
         const val = obj[key]
-        if (isPlainObject < val) {
+        if (isPlainObject(val)) {
           if (isPlainObject(result[key])) {
             result[key] = deepMerge(result[key], val)
           } else {
