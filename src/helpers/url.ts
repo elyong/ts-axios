@@ -18,7 +18,7 @@ function encode(val: string): string {
 
 export function buildURL(
   url: string,
-  params: any,
+  params?: any,
   paramsSerializer?: (parmas: any) => string
 ): string {
   if (!params) {
@@ -42,7 +42,7 @@ export function buildURL(
       let values = []
       if (Array.isArray(val)) {
         values = val
-        key += []
+        key += '[]'
       } else {
         values = [val]
       }
@@ -72,7 +72,7 @@ export function buildURL(
 }
 
 export function isAbsoluteURL(url: string): boolean {
-  return /(^[a-z][a-z\d\+\-\.]*:)?\/\//i.test(url)
+  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url)
 }
 
 export function combineURL(baseURL: string, relativeURL?: string): string {
